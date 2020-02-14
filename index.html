@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <!-- hier zet je de code in de head tags -->
+    <title>De filmZoeker met 5 filters</title>
+    <script defer type="text/javascript" src="script.js"></script>
+  </head>
+  <body>
+    <h1>De filmZoeker</h1>
+    <nav>
+      <input
+        type="radio"
+        id="recent"
+        name="filmcategorie"
+        value="nieuwste films, 2014 en recenter"
+      />
+      <label for="recent">Nieuwste films, 2014 en recenter</label>
+      <input
+        type="radio"
+        id="avenger"
+        name="filmcategorie"
+        value="avenger films"
+      /><label for="avenger">Avenger films</label>
+      <input type="radio" id="xmen" name="filmcategorie" value="x-men films" />
+      <label for="xmen">X-men films</label>
+      <input
+        type="radio"
+        id="princess"
+        name="filmcategorie"
+        value="princess films"
+      /><label for="princess">Princess films</label>
+      <input
+        type="radio"
+        id="batman"
+        name="filmcategorie"
+        value="batman films"
+      /><label for="batman">Batman films</label>
+    </nav>
+    <main></main>
+    <div>
+      <ul id="filmplaatjes"></ul>
+    </div>
+    <!-- hier zet je de code in de body tags-->
+  </body>
+</html>
