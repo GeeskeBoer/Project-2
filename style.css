@@ -9,12 +9,12 @@ body {
   justify-content: center;
 }
 
-.filters {
+.radiobutton {
   display: flex;
   justify-content: space-around;
-  margin: 30px;
+  margin: 20px;
 }
-#movie-list {
+#filmplaatjes {
   display: flex;
   list-style: none;
   flex-wrap: wrap;
