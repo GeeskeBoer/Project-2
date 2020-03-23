@@ -283,50 +283,59 @@ const movies = [
 ];
 const movieTitle = movies.map(movie => movie.Title);
 
+function addMoviesToDom() {
+  movies.forEach(function(movie) {
+    let img = document.createElement("img");
+    img.src = movie.Poster;
+    const listName = document.getElementById("filmplaatjes");
+    listName.appendChild(img);
+  });
+}
+addMoviesToDom();
+// Per buttonsoort filter gemaakt
+//5x hetzelfde dus indien tijd over is stukkie korter schrijven
+const recent = document.getElementById("recent");
+const avenger = document.getElementById("avenger");
+const xmen = document.getElementById("xmen");
+const princess = document.getElementById("princess");
+const batman = document.getElementById("batman");
+
 const movieRecent = movies.filter(movie => {
   const integer = parseInt(movie.Year, 10);
   return integer > 2013;
 });
-console.log("Films van na 2013:", movieRecent);
+const movieFilterAvengers = movies.filter(name =>
+  name.Title.includes("Avengers")
+);
+const movieFilterXmen = movies.filter(name => name.Title.includes("X-Men"));
+const movieFilterPrincess = movies.filter(name =>
+  name.Title.includes("Princess")
+);
+const movieFilterBatman = movies.filter(name => name.Title.includes("Batman"));
 
-// Avengers in de titel geselecteerd en de titel geretouneerd
-const movieAvenger = movies
-  .map(movie => {
-    return movie.Title;
-  })
-  .filter(movie => {
-    return (movie.Title = "avengers");
+//Als ik klik op button
+//Dom legen
+//Dom vullen met img van de gekozen categorie
+recent.addEventListener("click", function() {
+  document.getElementById("filmplaatjes").innerHTML = "";
+  movieRecent.forEach(function(movie) {
+    let imgRecent = document.createElement("img");
+    img.src = movie.Poster;
+    const listName = document.getElementById("filmplaatjes");
+    listName.appendChild(imgRecent);
+    addMoviesToDomRecent();
   });
-console.log("Films met Avengers:", movieAvenger);
-
-// X-men in de titel geselecteerd en de titel geretouneerd
-const movieXmen = movies
-  .filter(movie => {
-    return (movie.Title = "x-men");
-  })
-  .map(movie => {
-    return movie.Title;
-  });
-console.log("Films met X-Men:", movieXmen);
-
-// Princess in de titel geselecteerd en de titel geretouneerd
-const moviePrincess = movies
-
-  .filter(movie => {
-    return (movie.Title = "princess");
-  })
-  .map(movie => {
-    return movie.Title;
-  });
-console.log("Films met Princess:", moviePrincess);
-
-// Princess in de titel geselecteerd en de titel geretouneerd
-const movieBatman = movies
-
-  .filter(movie => {
-    return (movie.Title = "batman");
-  })
-  .map(movie => {
-    return movie.Title;
-  });
-console.log("Films met Batman:", movieBatman);
+});
+avenger.addEventListener("click", function() {
+  document.getElementById("filmplaatjes").innerHTML = "";
+});
+xmen.addEventListener("click", function() {
+  document.getElementById("filmplaatjes").innerHTML = "";
+});
+princess.addEventListener("click", function() {
+  document.getElementById("filmplaatjes").innerHTML = "";
+});
+batman.addEventListener("click", function() {
+  document.getElementById("filmplaatjes").innerHTML = "";
+  addMoviesToDomBatman();
+});
